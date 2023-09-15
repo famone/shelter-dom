@@ -1,30 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Header />
+  <PetModal v-if="petsStore.single_pet" :pet="petsStore.single_pet" />
   <router-view/>
+  <Footer />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { usePetsStore } from './stores/pets'
+import Header from '@/components/ui/Header.vue'
+import Footer from '@/components/ui/Footer.vue'
+import PetModal from '@/components/ui/PetModal.vue'
 
-nav {
-  padding: 30px;
+export default {
+  components: {
+    Header,
+    Footer,
+    PetModal
+  },
+  data(){
+    return {
+      petsStore: usePetsStore()
+    }
+  },
+  created(){
+    usePetsStore().LOAD_PETS()
+  }
 }
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>

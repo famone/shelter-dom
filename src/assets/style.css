@@ -1,0 +1,44 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  scroll-behavior:auto;
+}
+body{
+    font-family: 'Arial';
+}
+button, a {
+  transition: all .3s ease !important;
+}
+.georgia{
+    font-family: 'Georgia';
+}
+h2, h3{
+  letter-spacing: 2.1px;
+}
+
+.dog_main{
+  transform: translateY(var(--transform_dog));
+  transition: all .3s ease;
+}
+.side_menu{
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 100%;
+  position: fixed;
+  transition: all .3s ease;
+}
+.side_menu.activeMenu{
+  left: 0;
+}
+
+@media (max-width: 672px) {
+  h2, h1{
+    font-size: 25px !important;
+  }
+}
