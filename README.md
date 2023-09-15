@@ -10,6 +10,16 @@ npm install
 npm run serve
 ```
 
+### Download json-server
+```
+npm install -g json-server
+```
+
+### Enable server-side
+```
+json-server data.json
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
