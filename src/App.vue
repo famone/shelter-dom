@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <PetModal v-if="petsStore.single_pet" :pet="petsStore.single_pet" />
+  <PetModal :pet="petsStore.single_pet" />
   <router-view/>
   <Footer />
 </template>
@@ -27,5 +27,6 @@ export default {
   }
 }
 </script>
+
 
 
