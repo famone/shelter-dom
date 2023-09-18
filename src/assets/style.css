@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 
-* {
-  scroll-behavior:auto;
+*, html{
+  scroll-behavior: smooth !important;
 }
 body{
     font-family: 'Arial';

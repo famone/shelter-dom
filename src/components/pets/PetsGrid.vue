@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-dim_l_gray2 pt-20 pb-[100px]">
+    <section class="bg-dim_l_gray2 pt-20 pb-[100px]" id="topside">
         <div class="container px-4 sm:px-[30px] md:px-0 mx-auto text-center">
             <h2 class="georgia mb-[60px] text-4xl text-dim_dark leading-tight text-center">
                 Our friends who <br>
@@ -50,6 +50,15 @@ export default {
         },
         getFirstItemPage(){
             return this.per_one_page * (this.active_page - 1)
+        }
+    },
+    watch: {
+        active_page(){
+            this.$nextTick(() => {
+                document.querySelector('#topside').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            })
         }
     },
     methods: {
